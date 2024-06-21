@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title>설문조사 양식</title>
+  </head>
+  <body>
+  <header>
+    <h1>설문조사 양식</h1>
+    <p>모든 항목에 빠짐없이 체크해주십시오.</p>
+  </header>
+    <hr>
+  <main>
+    <form>
+      <fieldset>
+        <legend>개인정보</legend>
+        <label for="name">이름</label>
+        <input type="text" 
+        name="name"
+        id="name" placeholder="본명을 입력하세요"> 
+        <br>
+        <label for="email">이메일</label>
+        <input type="email" 
+        name="email"
+        id="email" placeholder="메일 주소 쓰세요">
+      </fieldset>
+      <fieldset>
+        <legend>설문</legend>
+
+        <p>어떤 동물을 가장 좋아하십니까?</p>
+        <input type="radio" id="강아지" name="age">
+        <label for="강아지">강아지</label>
+        <input type="radio" id="고양이" name="age">
+        <label for="고양이">고양이</label>
+        <input type="radio" id="원숭이" name="age">
+        <label for="원숭이">원숭이</label>
+        <input type="radio" id="호랑이" name="age">
+        <label for="호랑이">호랑이</label>
+        <input type="radio" id="사자" name="age">
+        <label for="사자">사자</label>
+        <input type="radio" id="other" name="age">
+        <label for="other">그 외</label>
+
+        <p>어떤 기준으로 위 동물을 좋아하시나요?</p>
+        <input type="checkbox" id="귀여움" name="academy">
+        <label for="귀여움">귀여움</label>
+        <input type="checkbox" id="멋있다" name="academy">
+        <label for="멋있다">멋있다</label>
+        <input type="checkbox" id="무섭다" name="academy">
+        <label for="무섭다">무섭다</label>
+        <input type="checkbox" id="도도하다" name="academy">
+        <label for="도도하다">도도하다</label>
+
+      </fieldset>
+      
+      <fieldset>
+        <legend>기타 의견</legend>
+        <textarea rows="3" cols="30" name="comment"></textarea>
+      </fieldset>
+      <input type="submit">
+    </form>
+  </main>
+    <hr>
+  <footer>
+    <p>입력하느라 수고하셨습니다.</p>
+  </footer>
+  </body>
+</html>
