@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자 더 알아보기</title>
+    <style>
+        [width $="0"]{
+            border: 5px dashed rgb(199, 249, 17);
+        }
+
+        p > em{
+            color: rgb(246, 69, 11);
+        }
+        #sam ~ img {
+            display: none;
+            color: blueviolet;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="images/images.jpeg" width="120" alt="팅커벨">
+    <img src="images/images.jpeg" width="120">
+    <img src="images/images.jpeg" width="120" id="sam">
+    <p>팅커벨은 디즈니 피터팬 영화 속 주인공 입니다.</p>
+    <p>팅커벨의 성격은 새침하고 질투가 많습니다.</p>
+    <p>하지만 피터팬에게 만큼은 <em>헌신적</em> 입니다.</p>
+    <p>팅커벨은 마지막 피터팬 영화에서 피터를 위해 희생합니다</p>
+    
+</body>
+</html>
