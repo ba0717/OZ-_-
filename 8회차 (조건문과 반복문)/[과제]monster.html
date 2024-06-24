@@ -32,7 +32,9 @@
              strong.textContent = `몬스터의 남은 HP는 ${monsterHP}입니다!`;
              container.appendChild(strong);
 
-             // break condition to prevent infinite loop in case of very low damage
+             //만약에 hp가 0보다 작아질 경우, hp에 0을 대입한다 
+
+             
              if (monsterHP <= 0) break;
          }              
 
