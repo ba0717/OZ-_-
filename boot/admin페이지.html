@@ -87,7 +87,13 @@
             return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
         }
 
-        document.getElementById('currentDateTime').textContent = getCurrentDateTime();
+        function updateDateTime() {
+            document.getElementById('currentDateTime').textContent = getCurrentDateTime();
+        }
+
+        setInterval(updateDateTime, 1000);  
+
+        updateDateTime();
     </script>
    <script>
       // 크롤링한 데이터를 아래와 같은 형태의 객체 배열로 가정합니다.
