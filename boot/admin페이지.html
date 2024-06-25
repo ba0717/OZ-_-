@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" data-bs-theme="dark">
+<html lang="ko" data-bs-theme="light">
 <head>
     <title>Admin Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -8,63 +8,68 @@
           background-color: black;
           color: #ffffff;
       }
-
+      /* 엄마의 성격을 그대로 물려 받아서 유지한다.*/
       .form-check-label {
           color: inherit;
       }
   </style>
 </head>
 <body>
+  <!--부트스트랩에서 가져온 버튼-->
   <div class="container mt-5">
       <div class="form-check form-switch">
           <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked">
           <label class="form-check-label" for="flexSwitchCheckChecked">다크 모드 전환</label>
       </div>
   </div>
-
+<!--자바스크립트는 기능을 만들어줍니다. 버튼을 작동할 때 어떤 기능을 갖게 하는 가 (이벤트))-->
   <script>
       document.getElementById("flexSwitchCheckChecked").addEventListener('change', function() {
-          document.body.classList.toggle('dark-mode');
-      });
+        const currentTheme = document.documentElement.getAttribute("data-bs-theme");
+            const newTheme = currentTheme === "light" ? "dark" : "light";
+            document.documentElement.setAttribute("data-bs-theme", newTheme);
+        });
+      //toggle 기능을 쓰면 한번 실행했을때는 추가 또 다시 실해하면 삭제된다 
   </script>
 
-    <div class="container mt-3">
-        <h3 class="mt-5 mb-3">신규 등록 상품</h3>
-        <form class="row row-cols-lg-auto g-3 align-items-center">      
-            <div class="col-12">
-              <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
-              <select class="form-select form-select-lg mb-3" aria-label="Large select example">
-                <option selected>카테고리</option>
-                <option value="1">상의</option>
-                <option value="2">하의</option>
-                <option value="3">신발</option>
-                <option value="3">패션잡화</option>
-              </select>
-              
-              <select class="form-select form-select-sm" aria-label="Small select example">
-                <option selected>성별</option>
-                <option value="1">여성</option>
-                <option value="2">남성</option>
-              </select>
-            </div>
-            <div class="col-3">
-                <input type="text" class="form-control" placeholder="제품명을 입력해주세요" aria-label="제품명을 입력해주세요" aria-describedby="basic-addon1">
-              </div>
-              <div class="col-auto">
-                <button type="button" class="btn btn-primary">조회</button>
-                
-              </div>
-          </form>
-          <div class="container mt-3">
-        <table class="table table-sm">
-            <thead>
-                <tr>
-                    <th scope="col">카테고리</th>
-                    <th scope="col">브랜드</th>
-                    <th scope="col">상품명</th>
-                    <th scope="col">가격</th>
-                </tr>
-            </thead>
+<div class="container mt-3">
+  <h3 class="mt-5 mb-3">신규 등록 상품</h3>
+  <form class="row row-cols-lg-auto g-3 align-items-center">
+      <div class="col-6">
+          <label class="visually-hidden" for="inlineFormSelectPref">카테고리</label>
+          <select class="form-select form-select-lg mb-3" aria-label="Large select example">
+              <option selected>카테고리</option>
+              <option value="1">상의</option>
+              <option value="2">하의</option>
+              <option value="3">신발</option>
+              <option value="4">패션잡화</option>
+          </select>
+      </div>
+      <div class="col-6">
+          <label class="visually-hidden" for="inlineFormSelectPref">성별</label>
+          <select class="form-select form-select-sm" aria-label="Small select example">
+              <option selected>성별</option>
+              <option value="1">여성</option>
+              <option value="2">남성</option>
+          </select>
+      </div>
+      <div class="col-3">
+          <input type="text" class="form-control" placeholder="제품명을 입력해주세요" aria-label="제품명을 입력해주세요" aria-describedby="basic-addon1">
+      </div>
+      <div class="col-auto">
+          <button type="button" class="btn btn-primary">조회</button>
+      </div>
+  </form>
+  <div class="container mt-3">
+      <table class="table table-sm">
+          <thead>
+              <tr>
+                  <th scope="col">카테고리</th>
+                  <th scope="col">브랜드</th>
+                  <th scope="col">상품명</th>
+                  <th scope="col">가격</th>
+              </tr>
+          </thead>
             <tbody id="data-table">
                 <!-- 추후 크롤링한 데이터가 들어가는 자리 -->
             </tbody>
@@ -89,7 +94,7 @@
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
           <a href="login.html" class="btn btn-outline-secondary" role="button">로그인</a>
-          <a href="join.html" class="btn btn-outline-secondary" role="button">회원가입</a>
+          <a href="index.html" class="btn btn-outline-secondary" role="button">회원가입</a>
       </div>
   
       </div>
